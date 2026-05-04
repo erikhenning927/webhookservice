@@ -1,13 +1,13 @@
 # Webhook Service - Exemplos de Payload
 
-Base URL: `http://localhost:5005/hook_service/api`
+Base URL: `http://localhost:5004/hook_service/api`
 
 ---
 
 ## 1️⃣ **inboundCart** (Carrinho)
 
 ```bash
-curl -X POST http://localhost:5005/hook_service/api \
+curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
   -H "Ce-Type: com.example.britaniachannel.inboundCart.v1" \
   -d '{
@@ -65,7 +65,7 @@ curl -X POST http://localhost:5005/hook_service/api \
 ## 2️⃣ **inboundOrder** (Pedido)
 
 ```bash
-curl -X POST http://localhost:5005/hook_service/api \
+curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
   -H "Ce-Type: com.example.britaniachannel.inboundOrder.v1" \
   -d '{
@@ -123,7 +123,7 @@ curl -X POST http://localhost:5005/hook_service/api \
 ## 3️⃣ **inboundCartEntry** (Entrada do Carrinho)
 
 ```bash
-curl -X POST http://localhost:5005/hook_service/api \
+curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
   -H "Ce-Type: com.example.britaniachannel.inboundCartEntry.v1" \
   -d '{
@@ -165,7 +165,7 @@ curl -X POST http://localhost:5005/hook_service/api \
 ## 4️⃣ **inboundOrderEntry** (Entrada do Pedido)
 
 ```bash
-curl -X POST http://localhost:5005/hook_service/api \
+curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
   -H "Ce-Type: com.example.britaniachannel.inboundOrderEntry.v1" \
   -d '{
@@ -204,7 +204,7 @@ curl -X POST http://localhost:5005/hook_service/api \
 ## 5️⃣ **inboundConsignment** (Consignação/Envio)
 
 ```bash
-curl -X POST http://localhost:5005/hook_service/api \
+curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
   -H "Ce-Type: com.example.britaniachannel.inboundConsignment.v1" \
   -d '{
@@ -249,7 +249,7 @@ curl -X POST http://localhost:5005/hook_service/api \
 ## 6️⃣ **inboundBritaniaConsignmentReturn** (Retorno de Consignação)
 
 ```bash
-curl -X POST http://localhost:5005/hook_service/api \
+curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
   -H "Ce-Type: com.example.britaniachannel.inboundBritaniaConsignmentReturn.v1" \
   -d '{
@@ -296,7 +296,7 @@ curl -X POST http://localhost:5005/hook_service/api \
 ## 8️⃣ **inboundEventHistory** (Histórico de Eventos)
 
 ```bash
-curl -X POST http://localhost:5005/hook_service/api \
+curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
   -H "Ce-Type: com.example.britaniachannel.inboundEventHistory.v1" \
   -d '{
@@ -357,14 +357,14 @@ curl -X POST http://localhost:5005/hook_service/api \
 Copie um dos exemplos acima e execute no terminal:
 
 ```bash
-curl -X POST http://localhost:5005/hook_service/api \
+curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
   -H "Ce-Type: com.example.britaniachannel.inboundOrder.v1" \
   -d '{...}'
 ```
 
 ### 2. Teste com Insomnia/Postman
-- **URL**: `http://localhost:5005/hook_service/api`
+- **URL**: `http://localhost:5004/hook_service/api`
 - **Método**: POST
 - **Headers**: 
   - `Content-Type: application/json`
@@ -376,7 +376,7 @@ curl -X POST http://localhost:5005/hook_service/api \
 import requests
 import json
 
-url = "http://localhost:5005/hook_service/api"
+url = "http://localhost:5004/hook_service/api"
 headers = {
     "Content-Type": "application/json",
     "Ce-Type": "com.example.britaniachannel.inboundOrder.v1"
