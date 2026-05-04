@@ -1,8 +1,8 @@
 import time
 import asyncio
-from utils.utils import parse_order_date, commerce_date, commerce_boolean
-from SQL.insert_update_eventHistory import insert_eventHistory_to_db
-from  SQL.insert_update_order import update_order_status
+from app.utils.utils import parse_order_date, commerce_date, commerce_boolean
+from app.SQL.insert_update_eventHistory import insert_eventHistory_to_db
+from app.SQL.insert_update_order import update_order_status
 
 
 
@@ -27,7 +27,7 @@ def process_event(payload):
     details.append({
         "orderId": (payload.get("order") or {}).get("code"),
         "consignmentId": (payload.get("consignment") or {}).get("code"),
-        "eventId": (payload.get("britaniaEvent") or {}).get("code"),
+        "eventId": (payload.get("eventId") or {}).get("code"),
         "description": (payload.get("description") or "")[:255],
         "attempts": payload.get("attempts", None),
         "sourceSystem": (payload.get("sourceSystem") or {}).get("code"),

@@ -1,6 +1,6 @@
-from db import get_connection
-from utils.chunk import chunked_iterable
-from utils.utils import load_sql
+from app.db import get_connection
+from app.utils.chunk import chunked_iterable
+from app.utils.utils import load_sql
 from datetime import datetime
 
 

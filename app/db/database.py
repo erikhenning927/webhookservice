@@ -47,12 +47,12 @@ class Database:
                 echo=False
             )
         else:
-            # Conexão direta com pyodbc (quando DATABASE_URL não é fornecida)
-            # Usa variáveis de ambiente user_db, pass_db, etc
-            user_db = os.getenv('user_db', 'sa')
-            pass_db = os.getenv('pass_db', '')
-            host_db = os.getenv('host_db', 'localhost,1433')
-            db_name = os.getenv('db_name', 'master')
+            # Usa as configuracoes do Pydantic
+            from app.core.config import settings
+            user_db = settings.user_db
+            pass_db = settings.pass_db
+            host_db = settings.host_db
+            db_name = settings.db_name
             
             try:
                 connection_string = (
