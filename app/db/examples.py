@@ -4,8 +4,8 @@ Exemplo de integração do módulo DB com os processos existentes.
 Este arquivo mostra como usar o ORM em lugar de queries SQL diretas.
 """
 
-from db.migrations import get_session
-from db import (
+from app.db.migrations import get_session
+from app.db import (
     CommerceOrders,
     CommerceOrderCustomer,
     CommercePaymentInfo,

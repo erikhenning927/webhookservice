@@ -1,9 +1,9 @@
 import time
-from utils.utils import parse_order_date, commerce_date, commerce_boolean
-from SQL.insert_update_orderCustomer import insert_orderCustomer_to_db
-from SQL.insert_update_order import insert_order_to_db
-from SQL.insert_update_deliveryAddress import insert_address_to_db
-from SQL.insert_update_PaymentInfo import insert_paymentInfos_to_db
+from app.utils.utils import parse_order_date, commerce_date, commerce_boolean
+from app.SQL.insert_update_orderCustomer import insert_orderCustomer_to_db
+from app.SQL.insert_update_order import insert_order_to_db
+from app.SQL.insert_update_deliveryAddress import insert_address_to_db
+from app.SQL.insert_update_PaymentInfo import insert_paymentInfos_to_db
 
 def process_cart(payload, hookType):
     startprocess = time.time()

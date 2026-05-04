@@ -1,6 +1,6 @@
 import time
-from utils.utils import parse_order_date, commerce_date, commerce_boolean
-from SQL.insert_update_entries import insert_entries_to_db
+from app.utils.utils import parse_order_date, commerce_date, commerce_boolean
+from app.SQL.insert_update_entries import insert_entries_to_db
 
 def process_entries(payload):
     startprocess = time.time()

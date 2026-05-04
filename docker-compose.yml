@@ -1,7 +1,7 @@
 services:
   webhookservice:
     build:
-      context: ./basedonsapcommerce
+      context: .
       dockerfile: Dockerfile
     container_name: webhookservice
     ports:

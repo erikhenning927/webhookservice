@@ -1,7 +1,7 @@
 import time
 import asyncio
-from utils.utils import parse_order_date, commerce_date, commerce_boolean
-from SQL.insert_update_consignment import insert_consignment_to_db, update_order_type
+from app.utils.utils import parse_order_date, commerce_date, commerce_boolean
+from app.SQL.insert_update_consignment import insert_consignment_to_db, update_order_type
 
 
 

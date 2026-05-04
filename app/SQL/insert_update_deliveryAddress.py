@@ -1,5 +1,5 @@
-from db import get_connection
-from utils.chunk import chunked_iterable
+from app.db import get_connection
+from app.utils.chunk import chunked_iterable
 from datetime import datetime
 
 

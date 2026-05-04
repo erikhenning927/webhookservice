@@ -32,7 +32,7 @@ COPY requirements.txt /app/
 
 RUN pip install --upgrade pip && pip install -r /app/requirements.txt
 
-ENV FLASK_APP=app_basedsapcommerce
+ENV PYTHONPATH=/app
 EXPOSE 5004
 
-CMD ["flask", "run", "--host=0.0.0.0", "--port=5004"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "5004"]

@@ -9,7 +9,7 @@ Base URL: `http://localhost:5004/hook_service/api`
 ```bash
 curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
-  -H "Ce-Type: com.example.britaniachannel.inboundCart.v1" \
+  -H "Ce-Type: com.example.commercechannel.inboundCart.v1" \
   -d '{
     "code": "CART-001",
     "creationtime": "/Date(1714827000000)/",
@@ -67,7 +67,7 @@ curl -X POST http://localhost:5004/hook_service/api \
 ```bash
 curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
-  -H "Ce-Type: com.example.britaniachannel.inboundOrder.v1" \
+  -H "Ce-Type: com.example.commercechannel.inboundOrder.v1" \
   -d '{
     "code": "CART-001",
     "creationtime": "/Date(1714827000000)/",
@@ -125,7 +125,7 @@ curl -X POST http://localhost:5004/hook_service/api \
 ```bash
 curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
-  -H "Ce-Type: com.example.britaniachannel.inboundCartEntry.v1" \
+  -H "Ce-Type: com.example.commercechannel.inboundCartEntry.v1" \
   -d '{
     "creationtime": "/Date(1714827000000)/",
     "modifiedtime": "/Date(1714827120000)/",
@@ -167,7 +167,7 @@ curl -X POST http://localhost:5004/hook_service/api \
 ```bash
 curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
-  -H "Ce-Type: com.example.britaniachannel.inboundOrderEntry.v1" \
+  -H "Ce-Type: com.example.commercechannel.inboundOrderEntry.v1" \
   -d '{
     "creationtime": "/Date(1714827600000)/",
     "modifiedtime": "/Date(1714827720000)/",
@@ -206,7 +206,7 @@ curl -X POST http://localhost:5004/hook_service/api \
 ```bash
 curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
-  -H "Ce-Type: com.example.britaniachannel.inboundConsignment.v1" \
+  -H "Ce-Type: com.example.commercechannel.inboundConsignment.v1" \
   -d '{
     "code": "CONSIGN-001",
     "creationtime": "/Date(1714840800000)/",
@@ -246,12 +246,12 @@ curl -X POST http://localhost:5004/hook_service/api \
 
 ---
 
-## 6️⃣ **inboundBritaniaConsignmentReturn** (Retorno de Consignação)
+## 6️⃣ **inboundConsignmentReturn** (Retorno de Consignação)
 
 ```bash
 curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
-  -H "Ce-Type: com.example.britaniachannel.inboundBritaniaConsignmentReturn.v1" \
+  -H "Ce-Type: com.example.commercechannel.inboundConsignmentReturn.v1" \
   -d '{
     "code": "CONSIGN-RETURN-001",
     "creationtime": "/Date(1714851600000)/",
@@ -298,7 +298,7 @@ curl -X POST http://localhost:5004/hook_service/api \
 ```bash
 curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
-  -H "Ce-Type: com.example.britaniachannel.inboundEventHistory.v1" \
+  -H "Ce-Type: com.example.commercechannel.inboundEventHistory.v1" \
   -d '{
     "creationtime": "/Date(1714848600000)/",
     "modifiedtime": "/Date(1714848720000)/",
@@ -311,7 +311,7 @@ curl -X POST http://localhost:5004/hook_service/api \
     "consignment": {
       "code": "CONSIGN-001"
     },
-    "britaniaEvent": {
+    "eventId": {
       "code": "ORDER_SHIPPED"
     },
     "sourceSystem": {
@@ -346,7 +346,7 @@ curl -X POST http://localhost:5004/hook_service/api \
 | `inboundCartEntry` | Entrada do carrinho | ✅ Ativo |
 | `inboundOrderEntry` | Entrada do pedido | ✅ Ativo |
 | `inboundConsignment` | Consignação/Envio | ✅ Ativo |
-| `inboundBritaniaConsignmentReturn` | Retorno de consignação | ✅ Ativo |
+| `inboundConsignmentReturn` | Retorno de consignação | ✅ Ativo |
 | `inboundEventHistory` | Histórico de eventos | ✅ Ativo |
 
 ---
@@ -359,7 +359,7 @@ Copie um dos exemplos acima e execute no terminal:
 ```bash
 curl -X POST http://localhost:5004/hook_service/api \
   -H "Content-Type: application/json" \
-  -H "Ce-Type: com.example.britaniachannel.inboundOrder.v1" \
+  -H "Ce-Type: com.example.commercechannel.inboundOrder.v1" \
   -d '{...}'
 ```
 
@@ -368,7 +368,7 @@ curl -X POST http://localhost:5004/hook_service/api \
 - **Método**: POST
 - **Headers**: 
   - `Content-Type: application/json`
-  - `Ce-Type: com.example.britaniachannel.{hookType}.v1`
+  - `Ce-Type: com.example.commercechannel.{hookType}.v1`
 - **Body**: JSON do exemplo
 
 ### 3. Teste com Python Requests
@@ -379,7 +379,7 @@ import json
 url = "http://localhost:5004/hook_service/api"
 headers = {
     "Content-Type": "application/json",
-    "Ce-Type": "com.example.britaniachannel.inboundOrder.v1"
+    "Ce-Type": "com.example.commercechannel.inboundOrder.v1"
 }
 payload = { ... }
 
@@ -403,7 +403,7 @@ Os dados são processados em background (thread assíncrona), então a resposta 
 
 ## 📝 Notas Importantes
 
-1. **Ce-Type Header**: Deve conter o hook type no padrão `com.example.britaniachannel.{hookType}.v1`
+1. **Ce-Type Header**: Deve conter o hook type no padrão `com.example.commercechannel.{hookType}.v1`
 2. **Processamento Assíncrono**: Os dados são processados em uma thread separada
 3. **Banco de Dados**: Os dados são persistidos no SQL Server configurado em `.env`
 4. **Validação**: Os campos são processados conforme implementado em `process_eventshook/`
